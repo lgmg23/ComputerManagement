@@ -76,8 +76,8 @@
           </Key>
           <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Usuario" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="NombreCompleto" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="Detalle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="NombreCompleto" Type="varchar" MaxLength="100" />
+          <Property Name="Detalle" Type="varchar" MaxLength="100" />
           <Property Name="Telefono" Type="int" />
           <Property Name="Correo" Type="varchar" MaxLength="50" />
         </EntityType>
@@ -353,8 +353,8 @@
           </Key>
           <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Usuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="NombreCompleto" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Detalle" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NombreCompleto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Detalle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Telefono" Type="Int32" />
           <Property Name="Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="t_Asignacion" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Asignac__Usuar__4E88ABD4" FromRole="t_Usuario" ToRole="t_Asignacion" />
