@@ -4,15 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="74e148ccd7974844b5fb9ebf8c30bcfc" Name="Diagram1" ZoomLevel="139">
+      <Diagram DiagramId="74e148ccd7974844b5fb9ebf8c30bcfc" Name="Diagram1" ZoomLevel="32">
         <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_Asignacion" Width="1.5" PointX="7.5" PointY="1.625" />
         <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_Equipo" Width="1.5" PointX="5.25" PointY="1.625" />
         <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_Factura" Width="1.5" PointX="0.75" PointY="7.375" />
         <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_Marca" Width="1.5" PointX="0.75" PointY="12.625" />
-        <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_Modelo" Width="1.5" PointX="0.75" PointY="5" />
+        <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_Modelo" Width="1.5" PointX="0.75" PointY="10.25" />
         <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_Producto" Width="1.5" PointX="3" PointY="1" />
-        <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_SistemaO" Width="1.5" PointX="0.75" PointY="1.875" />
-        <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_Tipo" Width="1.5" PointX="0.75" PointY="10.25" />
+        <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_SistemaO" Width="1.5" PointX="0.75" PointY="5" />
+        <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_Tipo" Width="1.5" PointX="0.75" PointY="1.875" />
         <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_Usuario" Width="1.5" PointX="5.25" PointY="5.5" />
         <AssociationConnector Association="COMPUTERMANAGEMENT_TestModel.FK__t_Asignac__Equip__4D94879B" />
         <AssociationConnector Association="COMPUTERMANAGEMENT_TestModel.FK__t_Asignac__Usuar__4E88ABD4" />

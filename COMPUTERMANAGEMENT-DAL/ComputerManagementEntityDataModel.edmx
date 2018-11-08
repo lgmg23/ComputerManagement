@@ -12,6 +12,7 @@
           <Property Name="IdAsignacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Equipo" Type="int" Nullable="false" />
           <Property Name="Usuario" Type="int" Nullable="false" />
+          <Property Name="NombreEquipo" Type="varchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <EntityType Name="t_Equipo">
           <Key>
@@ -274,6 +275,7 @@
           <Property Name="IdAsignacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Equipo" Type="Int32" Nullable="false" />
           <Property Name="Usuario" Type="Int32" Nullable="false" />
+          <Property Name="NombreEquipo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="t_Equipo" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Asignac__Equip__4D94879B" FromRole="t_Asignacion" ToRole="t_Equipo" />
           <NavigationProperty Name="t_Usuario" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Asignac__Usuar__4E88ABD4" FromRole="t_Asignacion" ToRole="t_Usuario" />
         </EntityType>
@@ -464,6 +466,7 @@
           <EntitySetMapping Name="t_Asignacion">
             <EntityTypeMapping TypeName="COMPUTERMANAGEMENT_TestModel.t_Asignacion">
               <MappingFragment StoreEntitySet="t_Asignacion">
+                <ScalarProperty Name="NombreEquipo" ColumnName="NombreEquipo" />
                 <ScalarProperty Name="Usuario" ColumnName="Usuario" />
                 <ScalarProperty Name="Equipo" ColumnName="Equipo" />
                 <ScalarProperty Name="IdAsignacion" ColumnName="IdAsignacion" />
