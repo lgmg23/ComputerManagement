@@ -9,7 +9,8 @@ namespace COMPUTERMANAGEMENT_MODEL
     public class AsignacionModel
     {
         public int IdAsignacion { get; set; }
-        public virtual EquipoModel Equipo { get; set; }
-        public virtual UsuarioModel Usuario { get; set; }
+        public int Equipo { get; set; }
+        public int Usuario { get; set; }
+        public string NombreEquipo { get; set; }
     }
 }

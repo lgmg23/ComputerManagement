@@ -1,0 +1,49 @@
+﻿@model IEnumerable<COMPUTERMANAGEMENT_DAL.t_Usuario>
+
+@{
+    ViewBag.Title = "ResultadoUsuarios";
+}
+
+<h2>Resultados de la busqueda</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreCompleto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Detalle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Correo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Usuario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreCompleto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Detalle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Correo)
+        </td>       
+    </tr>
+}
+
+</table>

@@ -23,12 +23,12 @@ namespace COMPUTERMANAGEMENT_SIAP.Controllers
             return cnAD;
         }
         [HttpGet]
-        public ActionResult UsuarioBusqueda()
+        public ActionResult LlenarUsuarios()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult UsuarioBusqueda(UsuarioModel datad)
+        public ActionResult LlenarUsuarios(UsuarioModel datad)
         {
             var config = new MapperConfiguration(cfg =>
             {
@@ -77,6 +77,41 @@ namespace COMPUTERMANAGEMENT_SIAP.Controllers
             }
                     //busqueda.Filter = "(&(objectCategory=person)(objectClass=user)(|(displayName=*" + usuario + "*)(givenName=*" + usuario + "*)(samaccountname=*" + usuario + "*)(sn=*" + usuario + "*)))";
         return View("Usuarios", modelList);
+        }
+        [HttpGet]
+        public ActionResult BuscarUsuario()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult BuscarUsuario(UsuarioBusquedaModel model)
+        {
+            COMPUTERMANAGEMENT_TestEntities _context = new COMPUTERMANAGEMENT_TestEntities();
+            List<t_Usuario> usuariosListTable = new List<t_Usuario>();
+            usuariosListTable = _context.t_Usuario.Where(x => x.Usuario.Contains(model.Usuario) || x.NombreCompleto.Contains(model.Usuario) || x.Correo.Contains(model.Usuario) || x.Detalle.Contains(model.Usuario)).ToList();
+            return View("ResultadoUsuarios", usuariosListTable);            
+        }
+        [HttpGet]
+        public ActionResult WSBuscarUsuario(string usuario)
+        {
+            var config = new MapperConfiguration(cfg =>
+            {
+
+                cfg.CreateMap<t_Usuario, UsuarioModel>();
+
+            });
+            List<UsuarioModel> modelList = new List<UsuarioModel>();
+            IMapper iMapper = config.CreateMapper();
+            COMPUTERMANAGEMENT_TestEntities _context = new COMPUTERMANAGEMENT_TestEntities();
+            List<t_Usuario> usuariosListTable = new List<t_Usuario>();
+            usuariosListTable = _context.t_Usuario.Where(x => x.Usuario.Contains(usuario) || x.NombreCompleto.Contains(usuario) || x.Correo.Contains(usuario) || x.Detalle.Contains(usuario)).ToList();
+            foreach (t_Usuario userActual in usuariosListTable)
+            {
+                var source = userActual;
+                var destination = iMapper.Map<t_Usuario, UsuarioModel>(source);
+                modelList.Add(destination);
+            }
+            return Json(modelList, JsonRequestBehavior.AllowGet);
         }
         [HttpGet]
         public ActionResult WSUsuarios()
