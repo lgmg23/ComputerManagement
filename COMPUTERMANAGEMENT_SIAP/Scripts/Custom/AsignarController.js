@@ -1,33 +1,29 @@
-﻿var app = angular.module('ngOptions', []).controller('EquipoAsignarController', function ($scope, $http) {
+﻿var app = angular.module('Equipo', []).controller('EquipoAsignarController', function ($scope, $http){
     var variable = "";
-    var estado = '';
-    var listaEstados = [];
-    var municipio = '';
+    var usuario = '';
+    var listaUsuarios = [];
+    var search = "";
 
     $scope.init = function () {
-        $scope.loadUsuarios();
+        $scope.loadUsuarios();       
     };
     $scope.loadUsuarios = function () {
-        var url = $scope.getUrl('Fuente/GetFuentes');
+        var url = $scope.getUrl('Usuario/WSUsuarios');
         $http.get(url).then(function (response) {
-            $scope.listaFuentes = response.data;
+            var data = [];
+            data = response.data;
+            $scope.listaUsuarios = data;
+            console.log(search);
         }, function (response) {
-            console.log('valio corneta Fuente');
+            console.log('Algo anda mal');
         });
-    }
+    };
    
     $scope.getUrl = function (url) {
-        //return 'http://app.sicya.com.mx/' + url;
-        //return 'http://187.188.46.247/' + url;	    
-        return 'http://localhost:2092/' + url;
-    }
+        return 'http://localhost:50274/' + url;
+    };
 
-    $scope.getDireccion = function () {
-        return ($scope.calle || "") + "+" +
-            ($scope.numeroExterior || "") + "+" +
-            ($scope.colonia ? $scope.colonia.Colonia : "") + "+" +
-            ($scope.codigoPostal ? $scope.codigoPostal.CodigoPostal : "") + "+" +
-            ($scope.municipio ? $scope.municipio.Municipio : "") + "+" +
-            ($scope.estado ? $scope.estado.Estado : "");
+    $scope.buscar = function () {
+        console.log("llll");
     };
 });

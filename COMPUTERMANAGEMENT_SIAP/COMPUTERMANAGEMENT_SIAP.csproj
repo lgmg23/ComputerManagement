@@ -167,6 +167,7 @@
     <Compile Include="Controllers\FacturaController.cs" />
     <Compile Include="Controllers\HelpersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProveedorController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -204,6 +205,7 @@
     <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\angular-sanitize.js" />
     <Content Include="Scripts\angular-sanitize.min.js" />
+    <Content Include="Scripts\angular-scenario.js" />
     <Content Include="Scripts\angular-touch.js" />
     <Content Include="Scripts\angular-touch.min.js" />
     <Content Include="Scripts\angular.js" />
@@ -214,6 +216,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Scripts\Custom\AsignarController.js" />
+    <Content Include="Scripts\Custom\FacturaController.js" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-touch.min.js.map" />
@@ -340,7 +343,6 @@
     <Content Include="Scripts\i18n\angular-locale_de-be.js" />
     <Content Include="Scripts\i18n\angular-locale_de-ch.js" />
     <Content Include="Scripts\i18n\angular-locale_de-de.js" />
-    <Content Include="Scripts\i18n\angular-locale_de-it.js" />
     <Content Include="Scripts\i18n\angular-locale_de-li.js" />
     <Content Include="Scripts\i18n\angular-locale_de-lu.js" />
     <Content Include="Scripts\i18n\angular-locale_de.js" />
@@ -458,7 +460,6 @@
     <Content Include="Scripts\i18n\angular-locale_en-tz.js" />
     <Content Include="Scripts\i18n\angular-locale_en-ug.js" />
     <Content Include="Scripts\i18n\angular-locale_en-um.js" />
-    <Content Include="Scripts\i18n\angular-locale_en-us-posix.js" />
     <Content Include="Scripts\i18n\angular-locale_en-us.js" />
     <Content Include="Scripts\i18n\angular-locale_en-vc.js" />
     <Content Include="Scripts\i18n\angular-locale_en-vg.js" />
@@ -476,7 +477,6 @@
     <Content Include="Scripts\i18n\angular-locale_es-ar.js" />
     <Content Include="Scripts\i18n\angular-locale_es-bo.js" />
     <Content Include="Scripts\i18n\angular-locale_es-br.js" />
-    <Content Include="Scripts\i18n\angular-locale_es-bz.js" />
     <Content Include="Scripts\i18n\angular-locale_es-cl.js" />
     <Content Include="Scripts\i18n\angular-locale_es-co.js" />
     <Content Include="Scripts\i18n\angular-locale_es-cr.js" />
@@ -1011,6 +1011,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Proveedor\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

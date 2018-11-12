@@ -23,9 +23,10 @@ namespace COMPUTERMANAGEMENT_DAL
         public int IdFactura { get; set; }
         public string Factura { get; set; }
         public System.DateTime Fecha { get; set; }
-        public Nullable<System.DateTime> Gatantia { get; set; }
-        public string Proveedor { get; set; }
+        public Nullable<System.DateTime> Garantia { get; set; }
+        public int Proveedor { get; set; }
     
+        public virtual t_Proveedor t_Proveedor { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<t_Producto> t_Producto { get; set; }
     }

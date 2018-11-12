@@ -26,7 +26,7 @@ $provide.value("$locale", {
     ],
     "FIRSTDAYOFWEEK": 6,
     "MONTH": [
-      "UMasingana",
+      "Januwari",
       "Februwari",
       "Mashi",
       "Ephreli",
@@ -82,12 +82,12 @@ $provide.value("$locale", {
     ],
     "fullDate": "EEEE, MMMM d, y",
     "longDate": "MMMM d, y",
-    "medium": "MMM d, y HH:mm:ss",
+    "medium": "MMM d, y h:mm:ss a",
     "mediumDate": "MMM d, y",
-    "mediumTime": "HH:mm:ss",
-    "short": "M/d/yy HH:mm",
+    "mediumTime": "h:mm:ss a",
+    "short": "M/d/yy h:mm a",
     "shortDate": "M/d/yy",
-    "shortTime": "HH:mm"
+    "shortTime": "h:mm a"
   },
   "NUMBER_FORMATS": {
     "CURRENCY_SYM": "R",

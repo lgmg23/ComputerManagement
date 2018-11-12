@@ -17,11 +17,11 @@ $provide.value("$locale", {
       "Th\u1ee9 B\u1ea3y"
     ],
     "ERANAMES": [
-      "Tr\u01b0\u1edbc CN",
+      "tr. CN",
       "sau CN"
     ],
     "ERAS": [
-      "Tr\u01b0\u1edbc CN",
+      "tr. CN",
       "sau CN"
     ],
     "FIRSTDAYOFWEEK": 0,
@@ -80,8 +80,8 @@ $provide.value("$locale", {
       5,
       6
     ],
-    "fullDate": "EEEE, d MMMM, y",
-    "longDate": "d MMMM, y",
+    "fullDate": "EEEE, 'ng\u00e0y' dd MMMM 'n\u0103m' y",
+    "longDate": "'Ng\u00e0y' dd 'th\u00e1ng' MM 'n\u0103m' y",
     "medium": "d MMM, y HH:mm:ss",
     "mediumDate": "d MMM, y",
     "mediumTime": "HH:mm:ss",
@@ -108,8 +108,8 @@ $provide.value("$locale", {
       {
         "gSize": 3,
         "lgSize": 3,
-        "maxFrac": 0,
-        "minFrac": 0,
+        "maxFrac": 2,
+        "minFrac": 2,
         "minInt": 1,
         "negPre": "-\u00a4\u00a0",
         "negSuf": "",

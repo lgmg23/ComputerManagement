@@ -94,6 +94,9 @@
     <Compile Include="t_Producto.cs">
       <DependentUpon>ComputerManagementEntityDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="t_Proveedor.cs">
+      <DependentUpon>ComputerManagementEntityDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="t_SistemaO.cs">
       <DependentUpon>ComputerManagementEntityDataModel.tt</DependentUpon>
     </Compile>

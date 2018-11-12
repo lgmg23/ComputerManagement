@@ -35,8 +35,8 @@ $provide.value("$locale", {
       "sabato"
     ],
     "ERANAMES": [
-      "avanti Cristo",
-      "dopo Cristo"
+      "a.C.",
+      "d.C."
     ],
     "ERAS": [
       "a.C.",
@@ -81,18 +81,18 @@ $provide.value("$locale", {
       "dic"
     ],
     "STANDALONEMONTH": [
-      "gennaio",
-      "febbraio",
-      "marzo",
-      "aprile",
-      "maggio",
-      "giugno",
-      "luglio",
-      "agosto",
-      "settembre",
-      "ottobre",
-      "novembre",
-      "dicembre"
+      "Gennaio",
+      "Febbraio",
+      "Marzo",
+      "Aprile",
+      "Maggio",
+      "Giugno",
+      "Luglio",
+      "Agosto",
+      "Settembre",
+      "Ottobre",
+      "Novembre",
+      "Dicembre"
     ],
     "WEEKENDRANGE": [
       5,

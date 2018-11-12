@@ -29,8 +29,8 @@
           <Property Name="IdFactura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Factura" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Fecha" Type="date" Nullable="false" />
-          <Property Name="Gatantia" Type="date" />
-          <Property Name="Proveedor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Garantia" Type="date" />
+          <Property Name="Proveedor" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="t_Marca">
           <Key>
@@ -57,6 +57,13 @@
           <Property Name="SistemaO" Type="int" />
           <Property Name="Factura" Type="int" />
         </EntityType>
+        <EntityType Name="t_Proveedor">
+          <Key>
+            <PropertyRef Name="IdProveedor" />
+          </Key>
+          <Property Name="IdProveedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Proveedor" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="t_SistemaO">
           <Key>
             <PropertyRef Name="IdSistemaO" />
@@ -82,7 +89,7 @@
           <Property Name="Telefono" Type="int" />
           <Property Name="Correo" Type="varchar" MaxLength="50" />
         </EntityType>
-        <Association Name="FK__t_Asignac__Equip__4D94879B">
+        <Association Name="FK__t_Asignac__Equip__5070F446">
           <End Role="t_Equipo" Type="Self.t_Equipo" Multiplicity="1" />
           <End Role="t_Asignacion" Type="Self.t_Asignacion" Multiplicity="*" />
           <ReferentialConstraint>
@@ -94,7 +101,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__t_Asignac__Usuar__4E88ABD4">
+        <Association Name="FK__t_Asignac__Usuar__5165187F">
           <End Role="t_Usuario" Type="Self.t_Usuario" Multiplicity="1" />
           <End Role="t_Asignacion" Type="Self.t_Asignacion" Multiplicity="*" />
           <ReferentialConstraint>
@@ -106,7 +113,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__t_Equipo__Produc__4AB81AF0">
+        <Association Name="FK__t_Equipo__Produc__4D94879B">
           <End Role="t_Producto" Type="Self.t_Producto" Multiplicity="1" />
           <End Role="t_Equipo" Type="Self.t_Equipo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -118,7 +125,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__t_Product__Factu__47DBAE45">
+        <Association Name="FK__t_Factura__Prove__412EB0B6">
+          <End Role="t_Proveedor" Type="Self.t_Proveedor" Multiplicity="1" />
+          <End Role="t_Factura" Type="Self.t_Factura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="t_Proveedor">
+              <PropertyRef Name="IdProveedor" />
+            </Principal>
+            <Dependent Role="t_Factura">
+              <PropertyRef Name="Proveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__t_Product__Factu__4AB81AF0">
           <End Role="t_Factura" Type="Self.t_Factura" Multiplicity="0..1" />
           <End Role="t_Producto" Type="Self.t_Producto" Multiplicity="*" />
           <ReferentialConstraint>
@@ -130,7 +149,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__t_Product__Marca__44FF419A">
+        <Association Name="FK__t_Product__Marca__47DBAE45">
           <End Role="t_Marca" Type="Self.t_Marca" Multiplicity="1" />
           <End Role="t_Producto" Type="Self.t_Producto" Multiplicity="*" />
           <ReferentialConstraint>
@@ -142,7 +161,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__t_Product__Model__45F365D3">
+        <Association Name="FK__t_Product__Model__48CFD27E">
           <End Role="t_Modelo" Type="Self.t_Modelo" Multiplicity="1" />
           <End Role="t_Producto" Type="Self.t_Producto" Multiplicity="*" />
           <ReferentialConstraint>
@@ -154,7 +173,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__t_Product__Siste__46E78A0C">
+        <Association Name="FK__t_Product__Siste__49C3F6B7">
           <End Role="t_SistemaO" Type="Self.t_SistemaO" Multiplicity="0..1" />
           <End Role="t_Producto" Type="Self.t_Producto" Multiplicity="*" />
           <ReferentialConstraint>
@@ -166,7 +185,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__t_Producto__Tipo__440B1D61">
+        <Association Name="FK__t_Producto__Tipo__46E78A0C">
           <End Role="t_Tipo" Type="Self.t_Tipo" Multiplicity="1" />
           <End Role="t_Producto" Type="Self.t_Producto" Multiplicity="*" />
           <ReferentialConstraint>
@@ -185,38 +204,43 @@
           <EntitySet Name="t_Marca" EntityType="Self.t_Marca" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="t_Modelo" EntityType="Self.t_Modelo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="t_Producto" EntityType="Self.t_Producto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="t_Proveedor" EntityType="Self.t_Proveedor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="t_SistemaO" EntityType="Self.t_SistemaO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="t_Tipo" EntityType="Self.t_Tipo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="t_Usuario" EntityType="Self.t_Usuario" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__t_Asignac__Equip__4D94879B" Association="Self.FK__t_Asignac__Equip__4D94879B">
+          <AssociationSet Name="FK__t_Asignac__Equip__5070F446" Association="Self.FK__t_Asignac__Equip__5070F446">
             <End Role="t_Equipo" EntitySet="t_Equipo" />
             <End Role="t_Asignacion" EntitySet="t_Asignacion" />
           </AssociationSet>
-          <AssociationSet Name="FK__t_Asignac__Usuar__4E88ABD4" Association="Self.FK__t_Asignac__Usuar__4E88ABD4">
+          <AssociationSet Name="FK__t_Asignac__Usuar__5165187F" Association="Self.FK__t_Asignac__Usuar__5165187F">
             <End Role="t_Usuario" EntitySet="t_Usuario" />
             <End Role="t_Asignacion" EntitySet="t_Asignacion" />
           </AssociationSet>
-          <AssociationSet Name="FK__t_Equipo__Produc__4AB81AF0" Association="Self.FK__t_Equipo__Produc__4AB81AF0">
+          <AssociationSet Name="FK__t_Equipo__Produc__4D94879B" Association="Self.FK__t_Equipo__Produc__4D94879B">
             <End Role="t_Producto" EntitySet="t_Producto" />
             <End Role="t_Equipo" EntitySet="t_Equipo" />
           </AssociationSet>
-          <AssociationSet Name="FK__t_Product__Factu__47DBAE45" Association="Self.FK__t_Product__Factu__47DBAE45">
+          <AssociationSet Name="FK__t_Factura__Prove__412EB0B6" Association="Self.FK__t_Factura__Prove__412EB0B6">
+            <End Role="t_Proveedor" EntitySet="t_Proveedor" />
+            <End Role="t_Factura" EntitySet="t_Factura" />
+          </AssociationSet>
+          <AssociationSet Name="FK__t_Product__Factu__4AB81AF0" Association="Self.FK__t_Product__Factu__4AB81AF0">
             <End Role="t_Factura" EntitySet="t_Factura" />
             <End Role="t_Producto" EntitySet="t_Producto" />
           </AssociationSet>
-          <AssociationSet Name="FK__t_Product__Marca__44FF419A" Association="Self.FK__t_Product__Marca__44FF419A">
+          <AssociationSet Name="FK__t_Product__Marca__47DBAE45" Association="Self.FK__t_Product__Marca__47DBAE45">
             <End Role="t_Marca" EntitySet="t_Marca" />
             <End Role="t_Producto" EntitySet="t_Producto" />
           </AssociationSet>
-          <AssociationSet Name="FK__t_Product__Model__45F365D3" Association="Self.FK__t_Product__Model__45F365D3">
+          <AssociationSet Name="FK__t_Product__Model__48CFD27E" Association="Self.FK__t_Product__Model__48CFD27E">
             <End Role="t_Modelo" EntitySet="t_Modelo" />
             <End Role="t_Producto" EntitySet="t_Producto" />
           </AssociationSet>
-          <AssociationSet Name="FK__t_Product__Siste__46E78A0C" Association="Self.FK__t_Product__Siste__46E78A0C">
+          <AssociationSet Name="FK__t_Product__Siste__49C3F6B7" Association="Self.FK__t_Product__Siste__49C3F6B7">
             <End Role="t_SistemaO" EntitySet="t_SistemaO" />
             <End Role="t_Producto" EntitySet="t_Producto" />
           </AssociationSet>
-          <AssociationSet Name="FK__t_Producto__Tipo__440B1D61" Association="Self.FK__t_Producto__Tipo__440B1D61">
+          <AssociationSet Name="FK__t_Producto__Tipo__46E78A0C" Association="Self.FK__t_Producto__Tipo__46E78A0C">
             <End Role="t_Tipo" EntitySet="t_Tipo" />
             <End Role="t_Producto" EntitySet="t_Producto" />
           </AssociationSet>
@@ -232,38 +256,43 @@
           <EntitySet Name="t_Marca" EntityType="COMPUTERMANAGEMENT_TestModel.t_Marca" />
           <EntitySet Name="t_Modelo" EntityType="COMPUTERMANAGEMENT_TestModel.t_Modelo" />
           <EntitySet Name="t_Producto" EntityType="COMPUTERMANAGEMENT_TestModel.t_Producto" />
+          <EntitySet Name="t_Proveedor" EntityType="COMPUTERMANAGEMENT_TestModel.t_Proveedor" />
           <EntitySet Name="t_SistemaO" EntityType="COMPUTERMANAGEMENT_TestModel.t_SistemaO" />
           <EntitySet Name="t_Tipo" EntityType="COMPUTERMANAGEMENT_TestModel.t_Tipo" />
           <EntitySet Name="t_Usuario" EntityType="COMPUTERMANAGEMENT_TestModel.t_Usuario" />
-          <AssociationSet Name="FK__t_Asignac__Equip__4D94879B" Association="COMPUTERMANAGEMENT_TestModel.FK__t_Asignac__Equip__4D94879B">
+          <AssociationSet Name="FK__t_Asignac__Equip__5070F446" Association="COMPUTERMANAGEMENT_TestModel.FK__t_Asignac__Equip__5070F446">
             <End Role="t_Equipo" EntitySet="t_Equipo" />
             <End Role="t_Asignacion" EntitySet="t_Asignacion" />
           </AssociationSet>
-          <AssociationSet Name="FK__t_Asignac__Usuar__4E88ABD4" Association="COMPUTERMANAGEMENT_TestModel.FK__t_Asignac__Usuar__4E88ABD4">
+          <AssociationSet Name="FK__t_Asignac__Usuar__5165187F" Association="COMPUTERMANAGEMENT_TestModel.FK__t_Asignac__Usuar__5165187F">
             <End Role="t_Usuario" EntitySet="t_Usuario" />
             <End Role="t_Asignacion" EntitySet="t_Asignacion" />
           </AssociationSet>
-          <AssociationSet Name="FK__t_Equipo__Produc__4AB81AF0" Association="COMPUTERMANAGEMENT_TestModel.FK__t_Equipo__Produc__4AB81AF0">
+          <AssociationSet Name="FK__t_Equipo__Produc__4D94879B" Association="COMPUTERMANAGEMENT_TestModel.FK__t_Equipo__Produc__4D94879B">
             <End Role="t_Producto" EntitySet="t_Producto" />
             <End Role="t_Equipo" EntitySet="t_Equipo" />
           </AssociationSet>
-          <AssociationSet Name="FK__t_Product__Factu__47DBAE45" Association="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Factu__47DBAE45">
+          <AssociationSet Name="FK__t_Factura__Prove__412EB0B6" Association="COMPUTERMANAGEMENT_TestModel.FK__t_Factura__Prove__412EB0B6">
+            <End Role="t_Proveedor" EntitySet="t_Proveedor" />
+            <End Role="t_Factura" EntitySet="t_Factura" />
+          </AssociationSet>
+          <AssociationSet Name="FK__t_Product__Factu__4AB81AF0" Association="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Factu__4AB81AF0">
             <End Role="t_Factura" EntitySet="t_Factura" />
             <End Role="t_Producto" EntitySet="t_Producto" />
           </AssociationSet>
-          <AssociationSet Name="FK__t_Product__Marca__44FF419A" Association="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Marca__44FF419A">
+          <AssociationSet Name="FK__t_Product__Marca__47DBAE45" Association="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Marca__47DBAE45">
             <End Role="t_Marca" EntitySet="t_Marca" />
             <End Role="t_Producto" EntitySet="t_Producto" />
           </AssociationSet>
-          <AssociationSet Name="FK__t_Product__Model__45F365D3" Association="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Model__45F365D3">
+          <AssociationSet Name="FK__t_Product__Model__48CFD27E" Association="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Model__48CFD27E">
             <End Role="t_Modelo" EntitySet="t_Modelo" />
             <End Role="t_Producto" EntitySet="t_Producto" />
           </AssociationSet>
-          <AssociationSet Name="FK__t_Product__Siste__46E78A0C" Association="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Siste__46E78A0C">
+          <AssociationSet Name="FK__t_Product__Siste__49C3F6B7" Association="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Siste__49C3F6B7">
             <End Role="t_SistemaO" EntitySet="t_SistemaO" />
             <End Role="t_Producto" EntitySet="t_Producto" />
           </AssociationSet>
-          <AssociationSet Name="FK__t_Producto__Tipo__440B1D61" Association="COMPUTERMANAGEMENT_TestModel.FK__t_Producto__Tipo__440B1D61">
+          <AssociationSet Name="FK__t_Producto__Tipo__46E78A0C" Association="COMPUTERMANAGEMENT_TestModel.FK__t_Producto__Tipo__46E78A0C">
             <End Role="t_Tipo" EntitySet="t_Tipo" />
             <End Role="t_Producto" EntitySet="t_Producto" />
           </AssociationSet>
@@ -276,8 +305,8 @@
           <Property Name="Equipo" Type="Int32" Nullable="false" />
           <Property Name="Usuario" Type="Int32" Nullable="false" />
           <Property Name="NombreEquipo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="t_Equipo" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Asignac__Equip__4D94879B" FromRole="t_Asignacion" ToRole="t_Equipo" />
-          <NavigationProperty Name="t_Usuario" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Asignac__Usuar__4E88ABD4" FromRole="t_Asignacion" ToRole="t_Usuario" />
+          <NavigationProperty Name="t_Equipo" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Asignac__Equip__5070F446" FromRole="t_Asignacion" ToRole="t_Equipo" />
+          <NavigationProperty Name="t_Usuario" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Asignac__Usuar__5165187F" FromRole="t_Asignacion" ToRole="t_Usuario" />
         </EntityType>
         <EntityType Name="t_Equipo">
           <Key>
@@ -286,8 +315,8 @@
           <Property Name="IdEquipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Producto" Type="Int32" Nullable="false" />
           <Property Name="Serie" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="t_Asignacion" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Asignac__Equip__4D94879B" FromRole="t_Equipo" ToRole="t_Asignacion" />
-          <NavigationProperty Name="t_Producto" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Equipo__Produc__4AB81AF0" FromRole="t_Equipo" ToRole="t_Producto" />
+          <NavigationProperty Name="t_Asignacion" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Asignac__Equip__5070F446" FromRole="t_Equipo" ToRole="t_Asignacion" />
+          <NavigationProperty Name="t_Producto" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Equipo__Produc__4D94879B" FromRole="t_Equipo" ToRole="t_Producto" />
         </EntityType>
         <EntityType Name="t_Factura">
           <Key>
@@ -296,9 +325,10 @@
           <Property Name="IdFactura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Factura" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Gatantia" Type="DateTime" Precision="0" />
-          <Property Name="Proveedor" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="t_Producto" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Factu__47DBAE45" FromRole="t_Factura" ToRole="t_Producto" />
+          <Property Name="Garantia" Type="DateTime" Precision="0" />
+          <Property Name="Proveedor" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="t_Proveedor" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Factura__Prove__412EB0B6" FromRole="t_Factura" ToRole="t_Proveedor" />
+          <NavigationProperty Name="t_Producto" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Factu__4AB81AF0" FromRole="t_Factura" ToRole="t_Producto" />
         </EntityType>
         <EntityType Name="t_Marca">
           <Key>
@@ -306,7 +336,7 @@
           </Key>
           <Property Name="IdMarca" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Marca" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="t_Producto" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Marca__44FF419A" FromRole="t_Marca" ToRole="t_Producto" />
+          <NavigationProperty Name="t_Producto" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Marca__47DBAE45" FromRole="t_Marca" ToRole="t_Producto" />
         </EntityType>
         <EntityType Name="t_Modelo">
           <Key>
@@ -314,7 +344,7 @@
           </Key>
           <Property Name="IdModelo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Modelo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="t_Producto" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Model__45F365D3" FromRole="t_Modelo" ToRole="t_Producto" />
+          <NavigationProperty Name="t_Producto" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Model__48CFD27E" FromRole="t_Modelo" ToRole="t_Producto" />
         </EntityType>
         <EntityType Name="t_Producto">
           <Key>
@@ -326,12 +356,20 @@
           <Property Name="Modelo" Type="Int32" Nullable="false" />
           <Property Name="SistemaO" Type="Int32" />
           <Property Name="Factura" Type="Int32" />
-          <NavigationProperty Name="t_Equipo" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Equipo__Produc__4AB81AF0" FromRole="t_Producto" ToRole="t_Equipo" />
-          <NavigationProperty Name="t_Factura" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Factu__47DBAE45" FromRole="t_Producto" ToRole="t_Factura" />
-          <NavigationProperty Name="t_Marca" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Marca__44FF419A" FromRole="t_Producto" ToRole="t_Marca" />
-          <NavigationProperty Name="t_Modelo" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Model__45F365D3" FromRole="t_Producto" ToRole="t_Modelo" />
-          <NavigationProperty Name="t_SistemaO" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Siste__46E78A0C" FromRole="t_Producto" ToRole="t_SistemaO" />
-          <NavigationProperty Name="t_Tipo" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Producto__Tipo__440B1D61" FromRole="t_Producto" ToRole="t_Tipo" />
+          <NavigationProperty Name="t_Equipo" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Equipo__Produc__4D94879B" FromRole="t_Producto" ToRole="t_Equipo" />
+          <NavigationProperty Name="t_Factura" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Factu__4AB81AF0" FromRole="t_Producto" ToRole="t_Factura" />
+          <NavigationProperty Name="t_Marca" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Marca__47DBAE45" FromRole="t_Producto" ToRole="t_Marca" />
+          <NavigationProperty Name="t_Modelo" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Model__48CFD27E" FromRole="t_Producto" ToRole="t_Modelo" />
+          <NavigationProperty Name="t_SistemaO" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Siste__49C3F6B7" FromRole="t_Producto" ToRole="t_SistemaO" />
+          <NavigationProperty Name="t_Tipo" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Producto__Tipo__46E78A0C" FromRole="t_Producto" ToRole="t_Tipo" />
+        </EntityType>
+        <EntityType Name="t_Proveedor">
+          <Key>
+            <PropertyRef Name="IdProveedor" />
+          </Key>
+          <Property Name="IdProveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Proveedor" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="t_Factura" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Factura__Prove__412EB0B6" FromRole="t_Proveedor" ToRole="t_Factura" />
         </EntityType>
         <EntityType Name="t_SistemaO">
           <Key>
@@ -339,7 +377,7 @@
           </Key>
           <Property Name="IdSistemaO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="SistemaO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="t_Producto" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Siste__46E78A0C" FromRole="t_SistemaO" ToRole="t_Producto" />
+          <NavigationProperty Name="t_Producto" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Siste__49C3F6B7" FromRole="t_SistemaO" ToRole="t_Producto" />
         </EntityType>
         <EntityType Name="t_Tipo">
           <Key>
@@ -347,7 +385,7 @@
           </Key>
           <Property Name="IdTipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Tipo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="t_Producto" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Producto__Tipo__440B1D61" FromRole="t_Tipo" ToRole="t_Producto" />
+          <NavigationProperty Name="t_Producto" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Producto__Tipo__46E78A0C" FromRole="t_Tipo" ToRole="t_Producto" />
         </EntityType>
         <EntityType Name="t_Usuario">
           <Key>
@@ -359,9 +397,9 @@
           <Property Name="Detalle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Telefono" Type="Int32" />
           <Property Name="Correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="t_Asignacion" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Asignac__Usuar__4E88ABD4" FromRole="t_Usuario" ToRole="t_Asignacion" />
+          <NavigationProperty Name="t_Asignacion" Relationship="COMPUTERMANAGEMENT_TestModel.FK__t_Asignac__Usuar__5165187F" FromRole="t_Usuario" ToRole="t_Asignacion" />
         </EntityType>
-        <Association Name="FK__t_Asignac__Equip__4D94879B">
+        <Association Name="FK__t_Asignac__Equip__5070F446">
           <End Type="COMPUTERMANAGEMENT_TestModel.t_Equipo" Role="t_Equipo" Multiplicity="1" />
           <End Type="COMPUTERMANAGEMENT_TestModel.t_Asignacion" Role="t_Asignacion" Multiplicity="*" />
           <ReferentialConstraint>
@@ -373,7 +411,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__t_Asignac__Usuar__4E88ABD4">
+        <Association Name="FK__t_Asignac__Usuar__5165187F">
           <End Type="COMPUTERMANAGEMENT_TestModel.t_Usuario" Role="t_Usuario" Multiplicity="1" />
           <End Type="COMPUTERMANAGEMENT_TestModel.t_Asignacion" Role="t_Asignacion" Multiplicity="*" />
           <ReferentialConstraint>
@@ -385,7 +423,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__t_Equipo__Produc__4AB81AF0">
+        <Association Name="FK__t_Equipo__Produc__4D94879B">
           <End Type="COMPUTERMANAGEMENT_TestModel.t_Producto" Role="t_Producto" Multiplicity="1" />
           <End Type="COMPUTERMANAGEMENT_TestModel.t_Equipo" Role="t_Equipo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -397,7 +435,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__t_Product__Factu__47DBAE45">
+        <Association Name="FK__t_Factura__Prove__412EB0B6">
+          <End Type="COMPUTERMANAGEMENT_TestModel.t_Proveedor" Role="t_Proveedor" Multiplicity="1" />
+          <End Type="COMPUTERMANAGEMENT_TestModel.t_Factura" Role="t_Factura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="t_Proveedor">
+              <PropertyRef Name="IdProveedor" />
+            </Principal>
+            <Dependent Role="t_Factura">
+              <PropertyRef Name="Proveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__t_Product__Factu__4AB81AF0">
           <End Type="COMPUTERMANAGEMENT_TestModel.t_Factura" Role="t_Factura" Multiplicity="0..1" />
           <End Type="COMPUTERMANAGEMENT_TestModel.t_Producto" Role="t_Producto" Multiplicity="*" />
           <ReferentialConstraint>
@@ -409,7 +459,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__t_Product__Marca__44FF419A">
+        <Association Name="FK__t_Product__Marca__47DBAE45">
           <End Type="COMPUTERMANAGEMENT_TestModel.t_Marca" Role="t_Marca" Multiplicity="1" />
           <End Type="COMPUTERMANAGEMENT_TestModel.t_Producto" Role="t_Producto" Multiplicity="*" />
           <ReferentialConstraint>
@@ -421,7 +471,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__t_Product__Model__45F365D3">
+        <Association Name="FK__t_Product__Model__48CFD27E">
           <End Type="COMPUTERMANAGEMENT_TestModel.t_Modelo" Role="t_Modelo" Multiplicity="1" />
           <End Type="COMPUTERMANAGEMENT_TestModel.t_Producto" Role="t_Producto" Multiplicity="*" />
           <ReferentialConstraint>
@@ -433,7 +483,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__t_Product__Siste__46E78A0C">
+        <Association Name="FK__t_Product__Siste__49C3F6B7">
           <End Type="COMPUTERMANAGEMENT_TestModel.t_SistemaO" Role="t_SistemaO" Multiplicity="0..1" />
           <End Type="COMPUTERMANAGEMENT_TestModel.t_Producto" Role="t_Producto" Multiplicity="*" />
           <ReferentialConstraint>
@@ -445,7 +495,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__t_Producto__Tipo__440B1D61">
+        <Association Name="FK__t_Producto__Tipo__46E78A0C">
           <End Type="COMPUTERMANAGEMENT_TestModel.t_Tipo" Role="t_Tipo" Multiplicity="1" />
           <End Type="COMPUTERMANAGEMENT_TestModel.t_Producto" Role="t_Producto" Multiplicity="*" />
           <ReferentialConstraint>
@@ -486,7 +536,7 @@
             <EntityTypeMapping TypeName="COMPUTERMANAGEMENT_TestModel.t_Factura">
               <MappingFragment StoreEntitySet="t_Factura">
                 <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
-                <ScalarProperty Name="Gatantia" ColumnName="Gatantia" />
+                <ScalarProperty Name="Garantia" ColumnName="Garantia" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
                 <ScalarProperty Name="Factura" ColumnName="Factura" />
                 <ScalarProperty Name="IdFactura" ColumnName="IdFactura" />
@@ -518,6 +568,14 @@
                 <ScalarProperty Name="Marca" ColumnName="Marca" />
                 <ScalarProperty Name="Tipo" ColumnName="Tipo" />
                 <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="t_Proveedor">
+            <EntityTypeMapping TypeName="COMPUTERMANAGEMENT_TestModel.t_Proveedor">
+              <MappingFragment StoreEntitySet="t_Proveedor">
+                <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
+                <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

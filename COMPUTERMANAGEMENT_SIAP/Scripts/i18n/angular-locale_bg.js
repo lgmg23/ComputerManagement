@@ -106,8 +106,8 @@ $provide.value("$locale", {
         "posSuf": ""
       },
       {
-        "gSize": 0,
-        "lgSize": 0,
+        "gSize": 3,
+        "lgSize": 3,
         "maxFrac": 2,
         "minFrac": 2,
         "minInt": 1,

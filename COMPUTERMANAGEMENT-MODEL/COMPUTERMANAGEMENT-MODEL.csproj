@@ -52,6 +52,7 @@
     <Compile Include="ModeloModel.cs" />
     <Compile Include="ProductoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProveedorModel.cs" />
     <Compile Include="SistemaOModel.cs" />
     <Compile Include="TipoModel.cs" />
     <Compile Include="UsuarioBusquedaModel.cs" />

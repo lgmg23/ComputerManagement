@@ -39,8 +39,8 @@ $provide.value("$locale", {
       "Baada ya Kristo"
     ],
     "ERAS": [
-      "KK",
-      "BK"
+      "BC",
+      "AD"
     ],
     "FIRSTDAYOFWEEK": 6,
     "MONTH": [

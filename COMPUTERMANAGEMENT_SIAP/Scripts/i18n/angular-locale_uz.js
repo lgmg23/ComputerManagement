@@ -34,19 +34,19 @@ $provide.value("$locale", {
       "iyun",
       "iyul",
       "avgust",
-      "sentabr",
-      "oktabr",
+      "Sentabr",
+      "Oktabr",
       "noyabr",
       "dekabr"
     ],
     "SHORTDAY": [
-      "Yak",
-      "Dush",
-      "Sesh",
-      "Chor",
-      "Pay",
-      "Jum",
-      "Shan"
+      "Ya",
+      "Du",
+      "Se",
+      "Ch",
+      "Pa",
+      "Ju",
+      "Sh"
     ],
     "SHORTMONTH": [
       "yan",
@@ -80,7 +80,7 @@ $provide.value("$locale", {
       5,
       6
     ],
-    "fullDate": "EEEE, d-MMMM, y",
+    "fullDate": "EEEE, y MMMM dd",
     "longDate": "d-MMMM, y",
     "medium": "d-MMM, y HH:mm:ss",
     "mediumDate": "d-MMM, y",
@@ -111,10 +111,10 @@ $provide.value("$locale", {
         "maxFrac": 2,
         "minFrac": 2,
         "minInt": 1,
-        "negPre": "-",
-        "negSuf": "\u00a0\u00a4",
-        "posPre": "",
-        "posSuf": "\u00a0\u00a4"
+        "negPre": "-\u00a4\u00a0",
+        "negSuf": "",
+        "posPre": "\u00a4\u00a0",
+        "posSuf": ""
       }
     ]
   },

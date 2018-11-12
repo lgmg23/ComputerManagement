@@ -58,13 +58,13 @@ $provide.value("$locale", {
       "Disamba"
     ],
     "SHORTDAY": [
-      "Lah",
-      "Lit",
-      "Tal",
-      "Lar",
-      "Alh",
-      "Jum",
-      "Asa"
+      "Lh",
+      "Li",
+      "Ta",
+      "Lr",
+      "Al",
+      "Ju",
+      "As"
     ],
     "SHORTMONTH": [
       "Jan",
@@ -100,12 +100,12 @@ $provide.value("$locale", {
     ],
     "fullDate": "EEEE, d MMMM, y",
     "longDate": "d MMMM, y",
-    "medium": "d MMM, y HH:mm:ss",
+    "medium": "d MMM, y h:mm:ss a",
     "mediumDate": "d MMM, y",
-    "mediumTime": "HH:mm:ss",
-    "short": "d/M/yy HH:mm",
+    "mediumTime": "h:mm:ss a",
+    "short": "d/M/yy h:mm a",
     "shortDate": "d/M/yy",
-    "shortTime": "HH:mm"
+    "shortTime": "h:mm a"
   },
   "NUMBER_FORMATS": {
     "CURRENCY_SYM": "\u20a6",

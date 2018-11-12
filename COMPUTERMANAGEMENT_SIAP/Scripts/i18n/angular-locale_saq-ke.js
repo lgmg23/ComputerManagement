@@ -42,7 +42,7 @@ $provide.value("$locale", {
       "KK",
       "BK"
     ],
-    "FIRSTDAYOFWEEK": 6,
+    "FIRSTDAYOFWEEK": 0,
     "MONTH": [
       "Lapa le obo",
       "Lapa le waare",

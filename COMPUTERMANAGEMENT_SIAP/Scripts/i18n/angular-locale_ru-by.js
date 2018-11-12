@@ -103,12 +103,12 @@ $provide.value("$locale", {
     "medium": "d MMM y '\u0433'. H:mm:ss",
     "mediumDate": "d MMM y '\u0433'.",
     "mediumTime": "H:mm:ss",
-    "short": "dd.MM.y H:mm",
-    "shortDate": "dd.MM.y",
+    "short": "dd.MM.yy H:mm",
+    "shortDate": "dd.MM.yy",
     "shortTime": "H:mm"
   },
   "NUMBER_FORMATS": {
-    "CURRENCY_SYM": "BYN",
+    "CURRENCY_SYM": "p.",
     "DECIMAL_SEP": ",",
     "GROUP_SEP": "\u00a0",
     "PATTERNS": [
