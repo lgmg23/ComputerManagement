@@ -33,15 +33,44 @@ namespace COMPUTERMANAGEMENT_SIAP.Controllers
             COMPUTERMANAGEMENT_TestEntities _context = new COMPUTERMANAGEMENT_TestEntities();
             var addfactura = _context.t_Factura.Add(destination);
             _context.SaveChanges();
+            List<FacturaModel> modelList = new List<FacturaModel>();
             var data = _context.t_Factura.ToList();
-            return View("FacturaList", data);
+            foreach(t_Factura facturaActual in data)
+            {
+                FacturaModel facturaM = new FacturaModel();
+                ProveedorModel proveedorM = new ProveedorModel();
+                proveedorM.IdProveedor = facturaActual.t_Proveedor.IdProveedor;
+                proveedorM.Proveedor = facturaActual.t_Proveedor.Proveedor;
+                facturaM.IdFactura = facturaActual.IdFactura;
+                facturaM.Factura = facturaActual.Factura;
+                facturaM.Fecha = facturaActual.Fecha;
+                facturaM.Garantia = facturaActual.Garantia;
+                facturaM.ProveedorM = proveedorM;                
+                modelList.Add(facturaM);
+            }
+            return View("FacturaList", modelList);
         }
         [HttpGet]
         public ActionResult FacturaList()
         {
             COMPUTERMANAGEMENT_TestEntities _context = new COMPUTERMANAGEMENT_TestEntities();
+            List<FacturaModel> modelList = new List<FacturaModel>();
             var data = _context.t_Factura.ToList();
-            return View(data);
+            foreach (t_Factura facturaActual in data)
+            {
+                FacturaModel facturaM = new FacturaModel();
+                ProveedorModel proveedorM = new ProveedorModel();
+                proveedorM.IdProveedor = facturaActual.t_Proveedor.IdProveedor;
+                proveedorM.Proveedor = facturaActual.t_Proveedor.Proveedor;
+                facturaM.IdFactura = facturaActual.IdFactura;
+                facturaM.Factura = facturaActual.Factura;
+                facturaM.Fecha = facturaActual.Fecha;
+                facturaM.Garantia = facturaActual.Garantia;
+                facturaM.ProveedorM = proveedorM;
+                modelList.Add(facturaM);
+            }
+            return View(modelList);
         }
+
     }
 }

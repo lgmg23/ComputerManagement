@@ -1007,6 +1007,7 @@
     <Content Include="Views\Usuario\BuscarUsuario.cshtml" />
     <Content Include="Views\Usuario\ResultadoUsuarios.cshtml" />
     <Content Include="Views\Asignacion\Asignar.cshtml" />
+    <Content Include="Views\Factura\FacturaList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

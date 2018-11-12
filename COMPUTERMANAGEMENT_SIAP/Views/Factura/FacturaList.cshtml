@@ -1,0 +1,57 @@
+﻿@model IEnumerable<COMPUTERMANAGEMENT_MODEL.FacturaModel>
+
+@{
+    ViewBag.Title = "FacturaList";
+}
+
+<h2>FacturaList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdFactura)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Factura)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Garantia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Proveedor)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdFactura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Factura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Garantia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Proveedor)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

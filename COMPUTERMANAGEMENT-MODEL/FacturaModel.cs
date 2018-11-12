@@ -11,7 +11,7 @@ namespace COMPUTERMANAGEMENT_MODEL
         public int IdFactura { get; set; }
         public string Factura { get; set; }
         public DateTime Fecha { get; set; }
-        public DateTime Garantia { get; set; }
+        public DateTime? Garantia { get; set; }
         public virtual ProveedorModel ProveedorM { get; set; }
         public int Proveedor { get; set; }
     }
