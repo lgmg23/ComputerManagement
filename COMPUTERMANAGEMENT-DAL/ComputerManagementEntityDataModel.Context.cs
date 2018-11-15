@@ -30,6 +30,7 @@ namespace COMPUTERMANAGEMENT_DAL
         public virtual DbSet<t_Factura> t_Factura { get; set; }
         public virtual DbSet<t_Marca> t_Marca { get; set; }
         public virtual DbSet<t_Modelo> t_Modelo { get; set; }
+        public virtual DbSet<t_NombreEquipo> t_NombreEquipo { get; set; }
         public virtual DbSet<t_Producto> t_Producto { get; set; }
         public virtual DbSet<t_Proveedor> t_Proveedor { get; set; }
         public virtual DbSet<t_SistemaO> t_SistemaO { get; set; }

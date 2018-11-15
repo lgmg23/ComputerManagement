@@ -16,8 +16,8 @@ namespace COMPUTERMANAGEMENT_SIAP.Controllers
         static DirectoryEntry conexionAD()
         {
             // create and return new LDAP connection with desired settings  
-            //DirectoryEntry cnAD = new DirectoryEntry("LDAP://GAP.NET", "soportea.ext2", "Gerard1995#");
-            DirectoryEntry cnAD = new DirectoryEntry("LDAP://MadrigalDEV.NET", "lmadrigal", "Gerard1995#");
+            DirectoryEntry cnAD = new DirectoryEntry("LDAP://GAP.NET", "soportea.ext2", "Gerard1995#");
+            //DirectoryEntry cnAD = new DirectoryEntry("LDAP://MadrigalDEV.NET", "lmadrigal", "Gerard1995#");
             cnAD.Path = "LDAP://MADRIGALDEV.NET";
             cnAD.AuthenticationType = AuthenticationTypes.Secure;
             return cnAD;
@@ -39,8 +39,8 @@ namespace COMPUTERMANAGEMENT_SIAP.Controllers
             List<UsuarioModel> modelList = new List<UsuarioModel>();
             IMapper iMapper = config.CreateMapper();
             //var usuario = usuarioModel.Usuario;
-            //DirectoryEntry adCN = new DirectoryEntry("LDAP://GAP.NET", "soportea.ext2", "Gerard1995#");
-            DirectoryEntry adCN = new DirectoryEntry("LDAP://MadrigalDEV.NET", "lmadrigal", "Gerard1995#");
+            DirectoryEntry adCN = new DirectoryEntry("LDAP://GAP.NET", "soportea.ext2", "Gerard1995#");
+            //DirectoryEntry adCN = new DirectoryEntry("LDAP://MadrigalDEV.NET", "lmadrigal", "Gerard1995#");
             DirectorySearcher busqueda = new DirectorySearcher(adCN);
             busqueda.Filter = "(&(objectCategory=person)(objectClass=user))";
             var results = busqueda.FindAll();

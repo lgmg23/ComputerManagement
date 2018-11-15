@@ -19,7 +19,7 @@
         });
     </script>
 }
-<h2>Factura</h2>
+<h2>Agregar Nueva Factura</h2>
 
 @using (Html.BeginForm())
 {
@@ -28,7 +28,6 @@
     <script src="~/Scripts/Custom/FacturaController.js"></script>
 
     <div class="form-horizontal" ng-app="Factura" ng-controller="FacturaController" ng-init="init()">
-        <h4>FacturaModel</h4>
         <hr />
         <div class="form-group">
             @Html.LabelFor(model => model.Factura, htmlAttributes: new { @class = "control-label col-md-2" })

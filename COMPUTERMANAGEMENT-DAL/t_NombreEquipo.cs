@@ -12,11 +12,11 @@ namespace COMPUTERMANAGEMENT_DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class t_Asignacion
+    public partial class t_NombreEquipo
     {
-        public int IdAsignacion { get; set; }
-        public int Equipo { get; set; }
+        public int IdNombreEquipo { get; set; }
         public int Usuario { get; set; }
+        public int Equipo { get; set; }
     
         public virtual t_Equipo t_Equipo { get; set; }
         public virtual t_Usuario t_Usuario { get; set; }

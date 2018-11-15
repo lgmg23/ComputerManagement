@@ -91,6 +91,9 @@
     <Compile Include="t_Modelo.cs">
       <DependentUpon>ComputerManagementEntityDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="t_NombreEquipo.cs">
+      <DependentUpon>ComputerManagementEntityDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="t_Producto.cs">
       <DependentUpon>ComputerManagementEntityDataModel.tt</DependentUpon>
     </Compile>

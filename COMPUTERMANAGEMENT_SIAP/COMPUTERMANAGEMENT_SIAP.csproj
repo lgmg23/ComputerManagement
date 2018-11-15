@@ -167,7 +167,10 @@
     <Compile Include="Controllers\FacturaController.cs" />
     <Compile Include="Controllers\HelpersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MarcaController.cs" />
     <Compile Include="Controllers\ProveedorController.cs" />
+    <Compile Include="Controllers\SistemaOController.cs" />
+    <Compile Include="Controllers\TipoController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1008,11 +1011,19 @@
     <Content Include="Views\Usuario\ResultadoUsuarios.cshtml" />
     <Content Include="Views\Asignacion\Asignar.cshtml" />
     <Content Include="Views\Factura\FacturaList.cshtml" />
+    <Content Include="Views\Usuario\LlenarUsuarios.cshtml" />
+    <Content Include="Views\Proveedor\AgregarProveedor.cshtml" />
+    <Content Include="Views\Proveedor\ProveedorList.cshtml" />
+    <Content Include="Views\Marca\AgregarMarca.cshtml" />
+    <Content Include="Views\Marca\MarcaList.cshtml" />
+    <Content Include="Views\SistemaO\AgregarSistemaO.cshtml" />
+    <Content Include="Views\SistemaO\SistemaOList.cshtml" />
+    <Content Include="Views\Tipo\AgregarTipo.cshtml" />
+    <Content Include="Views\Tipo\TipoList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Proveedor\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

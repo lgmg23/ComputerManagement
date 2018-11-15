@@ -5,25 +5,28 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="74e148ccd7974844b5fb9ebf8c30bcfc" Name="Diagram1" ZoomLevel="32">
-        <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_Asignacion" Width="1.5" PointX="9.75" PointY="1.625" />
-        <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_Equipo" Width="1.5" PointX="7.5" PointY="1.625" />
-        <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_Factura" Width="1.5" PointX="3" PointY="1.5" />
-        <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_Marca" Width="1.5" PointX="3" PointY="5" />
-        <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_Modelo" Width="1.5" PointX="3" PointY="12" />
-        <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_Producto" Width="1.5" PointX="5.25" PointY="1" />
-        <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_Proveedor" Width="1.5" PointX="0.75" PointY="1.875" />
-        <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_SistemaO" Width="1.5" PointX="3" PointY="9.75" />
-        <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_Tipo" Width="1.5" PointX="3" PointY="7.375" />
-        <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_Usuario" Width="1.5" PointX="7.5" PointY="5.5" />
-        <AssociationConnector Association="COMPUTERMANAGEMENT_TestModel.FK__t_Asignac__Equip__5070F446" />
-        <AssociationConnector Association="COMPUTERMANAGEMENT_TestModel.FK__t_Asignac__Usuar__5165187F" />
-        <AssociationConnector Association="COMPUTERMANAGEMENT_TestModel.FK__t_Equipo__Produc__4D94879B" />
-        <AssociationConnector Association="COMPUTERMANAGEMENT_TestModel.FK__t_Factura__Prove__412EB0B6" />
-        <AssociationConnector Association="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Factu__4AB81AF0" />
-        <AssociationConnector Association="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Marca__47DBAE45" />
-        <AssociationConnector Association="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Model__48CFD27E" />
-        <AssociationConnector Association="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Siste__49C3F6B7" />
-        <AssociationConnector Association="COMPUTERMANAGEMENT_TestModel.FK__t_Producto__Tipo__46E78A0C" />
+        <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_Asignacion" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_Equipo" Width="1.5" PointX="7.5" PointY="3.625" />
+        <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_Factura" Width="1.5" PointX="3" PointY="3.5" />
+        <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_Marca" Width="1.5" PointX="3" PointY="7.125" />
+        <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_Modelo" Width="1.5" PointX="3" PointY="11.75" />
+        <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_NombreEquipo" Width="1.5" PointX="9.75" PointY="3.75" />
+        <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_Producto" Width="1.5" PointX="5.25" PointY="3.125" />
+        <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_Proveedor" Width="1.5" PointX="0.75" PointY="4" />
+        <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_SistemaO" Width="1.5" PointX="3" PointY="14.125" />
+        <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_Tipo" Width="1.5" PointX="3" PointY="9.375" />
+        <EntityTypeShape EntityType="COMPUTERMANAGEMENT_TestModel.t_Usuario" Width="1.5" PointX="7.5" PointY="7" />
+        <AssociationConnector Association="COMPUTERMANAGEMENT_TestModel.FK__t_Asignac__Equip__628FA481" />
+        <AssociationConnector Association="COMPUTERMANAGEMENT_TestModel.FK__t_Asignac__Usuar__6383C8BA" />
+        <AssociationConnector Association="COMPUTERMANAGEMENT_TestModel.FK__t_Equipo__Produc__5FB337D6" />
+        <AssociationConnector Association="COMPUTERMANAGEMENT_TestModel.FK__t_NombreE__Equip__6754599E" />
+        <AssociationConnector Association="COMPUTERMANAGEMENT_TestModel.FK__t_Factura__Prove__534D60F1" />
+        <AssociationConnector Association="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Factu__5CD6CB2B" />
+        <AssociationConnector Association="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Marca__59FA5E80" />
+        <AssociationConnector Association="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Model__5AEE82B9" />
+        <AssociationConnector Association="COMPUTERMANAGEMENT_TestModel.FK__t_NombreE__Usuar__66603565" />
+        <AssociationConnector Association="COMPUTERMANAGEMENT_TestModel.FK__t_Product__Siste__5BE2A6F2" />
+        <AssociationConnector Association="COMPUTERMANAGEMENT_TestModel.FK__t_Producto__Tipo__59063A47" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

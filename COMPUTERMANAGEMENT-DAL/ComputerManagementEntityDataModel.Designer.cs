@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\luisg\Desktop\GAP\Computer Management\COMPUTERMANAGEMENT_SIAP\ComputerManagement\COMPUTERMANAGEMENT-DAL\ComputerManagementEntityDataModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\soportea.ext2\source\repos\lgmg23\ComputerManagement\COMPUTERMANAGEMENT-DAL\ComputerManagementEntityDataModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

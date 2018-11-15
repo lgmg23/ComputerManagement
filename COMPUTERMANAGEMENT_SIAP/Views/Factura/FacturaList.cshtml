@@ -4,16 +4,13 @@
     ViewBag.Title = "FacturaList";
 }
 
-<h2>FacturaList</h2>
+<h2>Lista de facturas</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Agregar factura", "factura")
 </p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.IdFactura)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.Factura)
         </th>
@@ -32,9 +29,6 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.IdFactura)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Factura)
         </td>
         <td>
@@ -44,12 +38,7 @@
             @Html.DisplayFor(modelItem => item.Garantia)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Proveedor)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.DisplayFor(modelItem => item.ProveedorM.Proveedor)
         </td>
     </tr>
 }

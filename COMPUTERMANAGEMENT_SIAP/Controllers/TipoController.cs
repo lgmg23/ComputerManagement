@@ -9,60 +9,59 @@ using System.Web.Mvc;
 
 namespace COMPUTERMANAGEMENT_SIAP.Controllers
 {
-    public class ProveedorController : Controller
+    public class TipoController : Controller
     {
         [HttpGet]
-        public ActionResult WSProveedor()
+        public ActionResult WSTipo()
         {
             var config = new MapperConfiguration(cfg =>
             {
 
-                cfg.CreateMap<t_Proveedor, ProveedorModel>();
+                cfg.CreateMap<t_Tipo, TipoModel>();
 
             });
-            List<ProveedorModel> modelList = new List<ProveedorModel>();
+            List<TipoModel> modelList = new List<TipoModel>();
             IMapper iMapper = config.CreateMapper();
             COMPUTERMANAGEMENT_TestEntities _context = new COMPUTERMANAGEMENT_TestEntities();
-            List<t_Proveedor> usuariosT = new List<t_Proveedor>();
-            usuariosT = _context.t_Proveedor.ToList();
-            foreach (t_Proveedor userActual in usuariosT)
+            List<t_Tipo> usuariosT = new List<t_Tipo>();
+            usuariosT = _context.t_Tipo.ToList();
+            foreach (t_Tipo userActual in usuariosT)
             {
                 var source = userActual;
-                var destination = iMapper.Map<t_Proveedor, ProveedorModel>(source);
+                var destination = iMapper.Map<t_Tipo, TipoModel>(source);
                 modelList.Add(destination);
             }
             return Json(modelList, JsonRequestBehavior.AllowGet);
         }
         [HttpGet]
-        public ActionResult AgregarProveedor()
+        public ActionResult AgregarTipo()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult AgregarProveedor(ProveedorModel model)
+        public ActionResult AgregarTipo(TipoModel model)
         {
             var config = new MapperConfiguration(cfg =>
             {
 
-                cfg.CreateMap<ProveedorModel, t_Proveedor>();
+                cfg.CreateMap<TipoModel, t_Tipo>();
 
             });
             IMapper iMapper = config.CreateMapper();
             var source = model;
-            var destination = iMapper.Map<ProveedorModel, t_Proveedor>(source);
+            var destination = iMapper.Map<TipoModel, t_Tipo>(source);
             COMPUTERMANAGEMENT_TestEntities _context = new COMPUTERMANAGEMENT_TestEntities();
-            var addfactura = _context.t_Proveedor.Add(destination);
-            _context.SaveChanges();            
-            var data = _context.t_Proveedor.ToList();
-            return View("ProveedorList", data);
+            var addfactura = _context.t_Tipo.Add(destination);
+            _context.SaveChanges();
+            var data = _context.t_Tipo.ToList();
+            return View("TipoList", data);
         }
         [HttpGet]
-        public ActionResult ProveedorList()
+        public ActionResult TipoList()
         {
             COMPUTERMANAGEMENT_TestEntities _context = new COMPUTERMANAGEMENT_TestEntities();
-            var data = _context.t_Proveedor.ToList();
-            return View(data);            
+            var data = _context.t_Tipo.ToList();
+            return View(data);
         }
-
     }
 }

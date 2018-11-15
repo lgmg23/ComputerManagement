@@ -18,6 +18,7 @@ namespace COMPUTERMANAGEMENT_DAL
         public t_Usuario()
         {
             this.t_Asignacion = new HashSet<t_Asignacion>();
+            this.t_NombreEquipo = new HashSet<t_NombreEquipo>();
         }
     
         public int IdUsuario { get; set; }
@@ -29,5 +30,7 @@ namespace COMPUTERMANAGEMENT_DAL
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<t_Asignacion> t_Asignacion { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<t_NombreEquipo> t_NombreEquipo { get; set; }
     }
 }

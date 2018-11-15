@@ -1,0 +1,28 @@
+﻿@model IEnumerable<COMPUTERMANAGEMENT_DAL.t_Proveedor>
+
+@{
+    ViewBag.Title = "ProveedorList";
+}
+
+<h2>Lista de proveedores</h2>
+
+<p>
+    @Html.ActionLink("Agregar", "AgregarProveedor")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Proveedor)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Proveedor)
+        </td>
+    </tr>
+}
+
+</table>
