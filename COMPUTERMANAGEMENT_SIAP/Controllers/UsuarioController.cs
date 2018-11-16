@@ -23,6 +23,26 @@ namespace COMPUTERMANAGEMENT_SIAP.Controllers
             return cnAD;
         }
         [HttpGet]
+        public ActionResult prueba()
+        {
+            var config = new MapperConfiguration(cfg =>
+            {
+
+                cfg.CreateMap<UsuarioModel, t_Usuario>();
+
+            });
+            List<UsuarioModel> modelList = new List<UsuarioModel>();
+            IMapper iMapper = config.CreateMapper();
+            //var usuario = usuarioModel.Usuario;
+            DirectoryEntry adCN = new DirectoryEntry("LDAP://GAP.NET", "soportea.ext2", "Gerard1995#");
+            //DirectoryEntry adCN = new DirectoryEntry("LDAP://MadrigalDEV.NET", "lmadrigal", "Gerard1995#");
+            DirectorySearcher busqueda = new DirectorySearcher(adCN);
+            busqueda.Filter = "(&(sAMAccountName=fleal))";
+            var results = busqueda.FindAll();
+            return View();
+        }
+
+        [HttpGet]
         public ActionResult LlenarUsuarios()
         {
             return View();
