@@ -14,6 +14,35 @@ namespace COMPUTERMANAGEMENT_SIAP.Controllers
         ///Factura
         ///
         [HttpGet]
+        public ActionResult WSFactura()
+        {
+            var config = new MapperConfiguration(cfg =>
+            {
+
+                cfg.CreateMap<t_Tipo, TipoModel>();
+
+            });
+            List<FacturaModel> modelList = new List<FacturaModel>();
+            IMapper iMapper = config.CreateMapper();
+            COMPUTERMANAGEMENT_TestEntities _context = new COMPUTERMANAGEMENT_TestEntities();
+            List<t_Factura> usuariosT = new List<t_Factura>();
+            usuariosT = _context.t_Factura.ToList();
+            foreach (t_Factura userActual in usuariosT)
+            {
+                FacturaModel factM = new FacturaModel();
+                ProveedorModel provM = new ProveedorModel();
+                provM.IdProveedor = userActual.t_Proveedor.IdProveedor;
+                provM.Proveedor = userActual.t_Proveedor.Proveedor;
+                factM.IdFactura = userActual.IdFactura;
+                factM.Factura = userActual.Factura;
+                factM.Fecha = userActual.Fecha;
+                factM.Garantia = userActual.Garantia;
+                factM.ProveedorM = provM;
+                modelList.Add(factM);
+            }
+            return Json(modelList, JsonRequestBehavior.AllowGet);
+        }
+        [HttpGet]
         public ActionResult Factura()
         {
             return View();

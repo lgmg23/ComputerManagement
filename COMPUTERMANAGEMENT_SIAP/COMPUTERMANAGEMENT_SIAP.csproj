@@ -168,6 +168,8 @@
     <Compile Include="Controllers\HelpersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MarcaController.cs" />
+    <Compile Include="Controllers\ModeloController.cs" />
+    <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\ProveedorController.cs" />
     <Compile Include="Controllers\SistemaOController.cs" />
     <Compile Include="Controllers\TipoController.cs" />
@@ -220,6 +222,8 @@
     </Content>
     <Content Include="Scripts\Custom\AsignarController.js" />
     <Content Include="Scripts\Custom\FacturaController.js" />
+    <Content Include="Scripts\Custom\ProductoController.js" />
+    <Content Include="Scripts\Custom\UsuarioTableController.js" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-touch.min.js.map" />
@@ -1020,6 +1024,10 @@
     <Content Include="Views\SistemaO\SistemaOList.cshtml" />
     <Content Include="Views\Tipo\AgregarTipo.cshtml" />
     <Content Include="Views\Tipo\TipoList.cshtml" />
+    <Content Include="Views\Producto\AgregarProducto.cshtml" />
+    <Content Include="Views\Modelo\AgregarModelo.cshtml" />
+    <Content Include="Views\Modelo\ModeloList.cshtml" />
+    <Content Include="Views\Usuario\UsuarioTable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,90 @@
+﻿@model COMPUTERMANAGEMENT_MODEL.ProductoTModel
+
+@{
+    ViewBag.Title = "AgregarProducto";
+}
+
+<h2>AgregarProducto</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/Custom/ProductoController.js"></script>
+
+    <div class="form-horizontal" ng-app="Producto" ng-controller="ProductoController" ng-init="init()">
+        <h4>ProductoTModel</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Tipo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select ng-model="tipo"
+                        ng-options="tipo.IdTipo as tipo.Tipo for tipo in listaTipo track by tipo.IdTipo"
+                        name="Tipo" class="form-control">
+                    <option value="">Seleccione Tipo</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Marca, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select ng-model="marca"
+                        ng-options="marca.IdMarca as marca.Marca for marca in listaMarca track by marca.IdMarca"
+                        name="Marca" class="form-control">
+                    <option value="">Seleccione Marca</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Modelo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select ng-model="Modelo"
+                        ng-options="Modelo.Modelo as Modelo.Modelo for Modelo in listaModelo track by Modelo.IdModelo"
+                        name="Modelo" class="form-control">
+                    <option value="">Seleccione Modelo</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SistemaO, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select ng-model="SistemaO"
+                        ng-options="SistemaO.IdSistemaO as SistemaO.SistemaO for SistemaO in listaSistemaO track by SistemaO.IdSistemaO"
+                        name="sistemaO" class="form-control">
+                    <option value="">Seleccione Sistema</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Factura, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select ng-model="factura"
+                        ng-options="factura.IdFactura as factura.Factura for factura in listaFactura track by factura.IdFactura"
+                        name="Factura" class="form-control">
+                    <option value="">Seleccione Factura</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Agregar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

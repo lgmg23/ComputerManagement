@@ -164,6 +164,12 @@ namespace COMPUTERMANAGEMENT_SIAP.Controllers
             return View(usuarioT);
         }
         [HttpGet]
+        public ActionResult UsuarioTable()
+        {
+            return View();
+        }
+
+        [HttpGet]
         public ActionResult Usuarios()
         {
             var config = new MapperConfiguration(cfg =>
