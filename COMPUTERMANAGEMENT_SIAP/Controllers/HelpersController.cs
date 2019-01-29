@@ -114,37 +114,5 @@ namespace COMPUTERMANAGEMENT_SIAP.Controllers
             var data = _context.t_SistemaO.ToList();
             return View(data);
         }
-        /// 
-        //Modelo
-        [HttpGet]
-        public ActionResult Modelo()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Modelo(ModeloModel model)
-        {
-            var config = new MapperConfiguration(cfg =>
-            {
-
-                cfg.CreateMap<ModeloModel, t_Modelo>();
-
-            });
-            IMapper iMapper = config.CreateMapper();
-            var source = model;
-            var destination = iMapper.Map<ModeloModel, t_Modelo>(model);
-            COMPUTERMANAGEMENT_TestEntities _context = new COMPUTERMANAGEMENT_TestEntities();
-            var addMarca = _context.t_Modelo.Add(destination);
-            _context.SaveChanges();
-            var data = _context.t_Modelo.ToList();
-            return View("ModeloList", data);
-        }
-        [HttpGet]
-        public ActionResult ModeloList()
-        {
-            COMPUTERMANAGEMENT_TestEntities _context = new COMPUTERMANAGEMENT_TestEntities();
-            var data = _context.t_Modelo.ToList();
-            return View(data);
-        }
     }
 }

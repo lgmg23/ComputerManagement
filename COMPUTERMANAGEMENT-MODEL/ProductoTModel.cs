@@ -11,7 +11,7 @@ namespace COMPUTERMANAGEMENT_MODEL
         public int IdProducto { get; set; }
         public int Tipo { get; set; }
         public int Marca { get; set; }
-        public int Modelo { get; set; }
+        public string Modelo { get; set; }
         public int SistemaO { get; set; }
         public int Factura { get; set; }
     }

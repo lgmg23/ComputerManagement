@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="AsignacionModel.cs" />
     <Compile Include="EquipoModel.cs" />
+    <Compile Include="EquipoTModel.cs" />
     <Compile Include="FacturaModel.cs" />
     <Compile Include="MarcaModel.cs" />
     <Compile Include="ModeloModel.cs" />

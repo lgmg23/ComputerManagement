@@ -11,7 +11,7 @@ namespace COMPUTERMANAGEMENT_MODEL
         public int IdProducto { get; set; }
         public virtual TipoModel Tipo { get; set; }
         public virtual MarcaModel Marca { get; set; }
-        public virtual ModeloModel Modelo { get; set; }
+        public string Modelo { get; set; }
         public virtual SistemaOModel SistemaO { get; set; }
         public virtual FacturaModel Factura { get; set; }
     }

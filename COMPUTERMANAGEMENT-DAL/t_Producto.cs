@@ -23,7 +23,7 @@ namespace COMPUTERMANAGEMENT_DAL
         public int IdProducto { get; set; }
         public int Tipo { get; set; }
         public int Marca { get; set; }
-        public int Modelo { get; set; }
+        public string Modelo { get; set; }
         public Nullable<int> SistemaO { get; set; }
         public Nullable<int> Factura { get; set; }
     
@@ -31,7 +31,6 @@ namespace COMPUTERMANAGEMENT_DAL
         public virtual ICollection<t_Equipo> t_Equipo { get; set; }
         public virtual t_Factura t_Factura { get; set; }
         public virtual t_Marca t_Marca { get; set; }
-        public virtual t_Modelo t_Modelo { get; set; }
         public virtual t_SistemaO t_SistemaO { get; set; }
         public virtual t_Tipo t_Tipo { get; set; }
     }

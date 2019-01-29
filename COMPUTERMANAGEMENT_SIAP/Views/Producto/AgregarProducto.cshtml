@@ -4,7 +4,7 @@
     ViewBag.Title = "AgregarProducto";
 }
 
-<h2>AgregarProducto</h2>
+<h2>Agregar Un Producto</h2>
 
 
 @using (Html.BeginForm())
@@ -14,7 +14,6 @@
     <script src="~/Scripts/Custom/ProductoController.js"></script>
 
     <div class="form-horizontal" ng-app="Producto" ng-controller="ProductoController" ng-init="init()">
-        <h4>ProductoTModel</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
@@ -43,11 +42,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Modelo, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <select ng-model="Modelo"
-                        ng-options="Modelo.Modelo as Modelo.Modelo for Modelo in listaModelo track by Modelo.IdModelo"
-                        name="Modelo" class="form-control">
-                    <option value="">Seleccione Modelo</option>
-                </select>
+                @Html.EditorFor(model => model.Modelo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Modelo, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -82,7 +78,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Ir a los productos", "Index")
 </div>
 
 @section Scripts {
